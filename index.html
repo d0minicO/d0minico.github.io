@@ -1,78 +1,57 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+  <title>InteractR: Explore Protein-Protein Interactions</title>
+  <style>
+    /* Change the background color of the body */
+    body {
+      background-color: #f2f2f2;
+    }
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title> InteractR | Probing protein-protein interactions</title>
-<meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="InteractR" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="This is InteractR for probing protein-protein interactions." />
-<meta property="og:description" content="This is InteractR for probing protein-protein interactions." />
-<link rel="canonical" href="https://d0minico.github.io/" />
-<meta property="og:url" content="https://d0minico.github.io/" />
-<meta property="og:site_name" content="InteractR" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="InteractR" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"This is InteractR for probing protein-protein interactions.","headline":"InteractR","name":"InteractR","url":"https://d0minico.github.io/"}</script>
-<!-- End Jekyll SEO tag -->
+    /* Change the font size of the text */
+    p {
+      font-size: 16px;
+    }
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=9f2da4fcfbdb42bd746bbcd218382dd8868e1cf6">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+    /* Change the color of the text */
+    h1 {
+      color: black;
+    }
 
-<!-- Setup Google Analytics -->
+    /* Add a border to an element */
+    img {
+      border: 1px solid black;
+    }
 
-
-
-<!-- You can set your favicon here -->
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1><a href="https://d0minico.github.io/">InteractR</a></h1>
-
-        
-
-        <p>This is InteractR for probing protein-protein interactions.</p>
-
-        
-
-        
-        <p class="view"><a href="https://github.com/d0minicO">View My GitHub Profile</a></p>
-        
-
-        
-      </header>
-      <section>
-
-      <h1 id="my-website">InteractR</h1>
-
-<p>This is InteractR for probing protein-protein interactions.</p>
-
-<h2 id="about">About</h2>
-
-<p>This is InteractR for probing protein-protein interactions.</p>
-
-<h2 id="contact">Contact</h2>
-
-      </section>
-      <footer>
-        
-        <p><small>Hosted on GitHub Pages</small></p>
-      </footer>
-    </div>
-    <script src="/assets/js/scale.fix.js"></script>
-  </body>
+    /* Add a hover effect to a link */
+    a:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to InteractR!</h1>
+  <p>InteractR is a website designed for exploring protein-protein interactions (PPIs), which are physical contacts of high specificity established between two or more protein molecules as a result of biochemical events steered by interactions that include electrostatic forces, hydrogen bonding and the hydrophobic effect. </p>
+  <p>PPIs have pivotal roles in life processes and are associated with various diseases, such as cancer, infectious diseases, and neurodegenerative diseases.  Therefore, targeting PPIs is a direction in treating diseases and an essential strategy for the development of new drugs. </p>
+  <p>InteractR allows you to enter in your own protein name and get information about that protein from a central database. You can also browse through our curated list of PPIs that are linked to different biological processes and pathways.</p>
+  <form action="search.php" method="get">
+    <label for="protein">Enter your protein name:</label>
+    <input type="text" id="protein" name="protein" placeholder="e.g. p53">
+    <input type="submit" value="Search">
+  </form>
+  <div id="results">
+    <?php
+      if (isset($_GET['protein'])) {
+        $protein = $_GET['protein'];
+        // Display the search results here
+        echo "<h2>Search Results for $protein:</h2>";
+        echo "<p>Result 1</p>";
+        echo "<p>Result 2</p>";
+        echo "<p>Result 3</p>";
+      }
+    ?>
+  </div>
+  <div id="browse">
+    <!-- Display the curated list of PPIs here -->
+  </div>
+</body>
 </html>
