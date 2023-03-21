@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>InteractR: Explore Protein-Protein Interactions</title>
@@ -33,25 +34,11 @@
   <p>InteractR is a website designed for exploring protein-protein interactions (PPIs), which are physical contacts of high specificity established between two or more protein molecules as a result of biochemical events steered by interactions that include electrostatic forces, hydrogen bonding and the hydrophobic effect. </p>
   <p>PPIs have pivotal roles in life processes and are associated with various diseases, such as cancer, infectious diseases, and neurodegenerative diseases.  Therefore, targeting PPIs is a direction in treating diseases and an essential strategy for the development of new drugs. </p>
   <p>InteractR allows you to enter in your own protein name and get information about that protein from a central database. You can also browse through our curated list of PPIs that are linked to different biological processes and pathways.</p>
-  <form action="search.php" method="get">
-    <label for="protein">Enter your protein name:</label>
-    <input type="text" id="protein" name="protein" placeholder="e.g. p53">
-    <input type="submit" value="Search">
+  <form name="interactR search" method="get" action="search.php">
+    <label for="protein">Enter HGNC-approved gene name</label>
+    <input type="text" id="protein" name="protein" placeholder="e.g. TP53">
+    <input type="submit" value="Search" name="submit">
   </form>
-  <div id="results">
-    <?php
-      if (isset($_GET['protein'])) {
-        $protein = $_GET['protein'];
-        // Display the search results here
-        echo "<h2>Search Results for $protein:</h2>";
-        echo "<p>Result 1</p>";
-        echo "<p>Result 2</p>";
-        echo "<p>Result 3</p>";
-      }
-    ?>
-  </div>
-  <div id="browse">
-    <!-- Display the curated list of PPIs here -->
-  </div>
+  
 </body>
 </html>
