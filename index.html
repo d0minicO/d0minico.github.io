@@ -1,37 +1,41 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <script type="application/shiny-singletons"></script>
-  <script type="application/html-dependencies">jquery[3.6.0];shiny-css[1.7.4];shiny-javascript[1.7.4];ionrangeslider-javascript[2.3.1];strftime[0.9.2];ionrangeslider-css[2.3.1];bootstrap[3.4.1]</script>
-<script src="jquery-3.6.0/jquery.min.js"></script>
-<link href="shiny-css-1.7.4/shiny.min.css" rel="stylesheet" />
-<script src="shiny-javascript-1.7.4/shiny.min.js"></script>
-<script src="ionrangeslider-javascript-2.3.1/js/ion.rangeSlider.min.js"></script>
-<script src="strftime-0.9.2/strftime-min.js"></script>
-<link href="ionrangeslider-css-2.3.1/css/ion.rangeSlider.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
-<link href="bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
-<script src="bootstrap-3.4.1/js/bootstrap.min.js"></script>
-<script src="bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>  <title>Welcome to InteractR</title>
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
 </head>
+
 <body>
-  <div class="container-fluid">
-    <h2>Hello Shiny!</h2>
-    <div class="row">
-      <div class="col-sm-4">
-        <form class="well" role="complementary">
-          <div class="form-group shiny-input-container">
-            <label class="control-label" id="bins-label" for="bins">Protein to search</label>
-            <input class="js-range-slider" id="bins" data-skin="shiny" data-min="1" data-max="50" data-from="30" data-step="1" data-grid="true" data-grid-num="9.8" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
-          </div>
-        </form>
-      </div>
-      <div class="col-sm-8" role="main">
-        <div class="shiny-plot-output html-fill-item" id="distPlot" style="width:100%;height:400px;"></div>
-      </div>
-    </div>
-  </div>
+
+  <h1>HTML UI</h1>
+
+  <p>
+    <label>Distribution type:</label><br />
+    <select name="dist">
+      <option value="norm">Normal</option>
+      <option value="unif">Uniform</option>
+      <option value="lnorm">Log-normal</option>
+      <option value="exp">Exponential</option>
+    </select>
+  </p>
+
+  <p>
+
+    <label>Number of observations:</label><br />
+    <input type="number" name="n" value="500" min="1" max="1000" />
+
+  </p>
+
+  <h3>Summary of data:</h3>
+  <pre id="summary" class="shiny-text-output"></pre>
+
+  <h3>Plot of data:</h3>
+  <div id="plot" class="shiny-plot-output"
+       style="width: 100%; height: 300px"></div>
+
+  <h3>Head of data:</h3>
+  <div id="table" class="shiny-html-output"></div>
+
 </body>
 </html>
