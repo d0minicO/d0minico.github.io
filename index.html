@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominic D. G. Owens</title>
+    <title>Dominic D. G. Owens - CV</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,60 +21,36 @@
         p {
             font-size: 18px;
         }
-        .ascii-art {
-            font-family: monospace;
-            white-space: pre;
+        .cv-container {
             margin-top: 20px;
         }
         .button-container {
             margin-top: 20px;
         }
-        .joke-button {
+        .download-button {
             background-color: #003399;
             color: white;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            text-decoration: none;
         }
-        .joke-button:hover {
+        .download-button:hover {
             background-color: #006600;
-        }
-        .joke-container {
-            margin-top: 20px;
-            font-size: 18px;
-            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Personal Website</h1>
-    <p>This is a WIP. Watch this space for Dominic Owens related content.</p>
+    <h1>Dominic D. G. Owens - Curriculum Vitae</h1>
+    <p>Welcome to my personal website. Below you can view and download my CV.</p>
     
-    <div class="ascii-art">
-        <pre>
-          _____  
-         /     \ 
-        | () () |
-         \  ^  / 
-          |||||  
-          |||||  
-        </pre>
+    <div class="cv-container">
+        <iframe src="DominicOwens_CV.pdf" width="80%" height="1000px"></iframe>
     </div>
     
     <div class="button-container">
-        <button class="joke-button" onclick="showJoke()">Click me for a joke!</button>
+        <a href="DominicOwens_CV.pdf" class="download-button" download>Download CV</a>
     </div>
-    
-    <div class="joke-container" id="joke-container">
-        <p>Why did the chicken cross the road? Splat!</p>
-    </div>
-
-    <script>
-        function showJoke() {
-            var jokeContainer = document.getElementById('joke-container');
-            jokeContainer.style.display = 'block';
-        }
-    </script>
 </body>
 </html>
